@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.master')
 
-        <title>Laravel</title>
+@section('title', 'pertama')
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-    </head>
-    <body>
-        
-    </body>
-    </html>
+@section('content')
+<div >
+    <h1 style="color:brown">Selamat datang di Website hanan</h1>
+    <h3>Laravel v.10</h3>
+</div>
+@endsection('')

@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/about', function(){
+    return view('about', [
+        'name' => 'Hanan Fijananto',
+        'prodi' => 'trpl'
+    ]);
+});
+
+Route::get('/image', function(){
+    return view('image');
+});
