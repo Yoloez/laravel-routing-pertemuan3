@@ -66,8 +66,6 @@ class PostController extends Controller
     return view('about', [
         'name' => 'Hanan Fijananto',
         'prodi' => 'trpl'
-    ]);
+    ]); 
 }
-    
-
 }
