@@ -11,7 +11,7 @@
     <main style="background-color: #FFF0CE; width:400px; border: black 1px solid">
         @yield('content')
     </main>
-    
+
     @include('components.footer')
 </body>
 </html>
