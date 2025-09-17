@@ -20,6 +20,6 @@ class BukuSeeder extends Seeder
                 'harga' =>  fake()->numberBetween(10000,50000),
                 'tgl_terbit' => fake() -> date(),
             ]);
-    }
+        }
     }   
 }

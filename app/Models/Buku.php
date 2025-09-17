@@ -8,6 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class buku extends Model
 {
     use HasFactory;
-
     protected $table = 'buku';
 }
