@@ -15,15 +15,19 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\Oddy;
 
 Route::get('/', [PostController::class, 'index']);
 
 Route::get('/about', [PostController::class, 'name']);
 
-Route::get('/image', function(){
-    return view('image');
-});
+Route::get('/image', [Oddy::class, 'index']);
+
 
 Route::get('/buku/', [BukuController::class, 'index']);
-Route::get('/buku/terbaru', [BukuController::class, 'terbaru']);
+Route::get('/terbaru', [BukuController::class, 'terbaru']);
+
+Route::get('/', [PostController::class, 'index']);
+
+
 

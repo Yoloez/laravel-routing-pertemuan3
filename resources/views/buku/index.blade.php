@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<a href="{{ url('buku/terbaru') }}">
+<a href="{{ url('/terbaru') }}">
     <button style="margin-bottom:20px; padding:10px; cursor:pointer">
         Tampilkan 5 data teratas
     </button>
@@ -10,12 +10,12 @@
 <form action="/buku" method="GET" style="margin-bottom:20px;">
     <input type="text" name="judul_buku" placeholder="Cari judul buku..." style="padding: 10px;" value="{{ request('judul_buku') }}">
     
-    <select style="padding: 10px;" name="penulis">
+    <select style="padding: 10px;" name="penuliss">
         <option value="default" hidden>Filter Penulis</option>
         @foreach ($nama_penulis as $penulis)
-        <option value="{{$penulis}}"  {{ request('penulis') == $penulis ? 'selected' : '' }}>{{ $penulis }}</option>
+        <option value="{{$penulis}}"  {{ request('penuliss') == $penulis ? 'selected' : '' }}>{{ $penulis }}</option>
         @endforeach
-    </select>
+    </select>   
     
     <button type="submit" style="padding: 10px; cursor:pointer">Cari</button>
     <a href="{{ url()->current() }}"><button style="padding: 10px;">Reset</button></a>
@@ -51,19 +51,23 @@
     </table>
 </div>
 
-<div style="display: flex; gap: 20px; margin-top: 20px;">
-<div style="margin-top:20px; padding:40px; border:1px solid #000000ff; width:fit-content; background:linear-gradient(to right, #EA5455, #F07B3F, #FFD460 100%);">
-    <p style="font-size:2rem; line-height:3rem; text-align:center;">Jumlah Buku: <br>{{$jumlah_buku}}</p>
-</div>
-<div style="margin-top:20px; padding:40px; border:1px solid #000000ff; width:fit-content; background:linear-gradient(to right, #C6D870, #8FA31E, #556B2F 100%);">
-<p style="font-size:2rem; line-height:3rem; text-align:center;">Total harga: <br>Rp{{number_format($total_harga)}}</p>
-</div>
-<div style="margin-top:20px; padding:40px; border:1px solid #000000ff; width:fit-content; background:linear-gradient(to right, #EA5455, #F07B3F, #FFD460 100%);">
-<p style="font-size:2rem; line-height:3rem; text-align:center;">Paling Mahal: <br>Rp{{number_format($paling_mahal)}}</p>
-</div>
-<div style="margin-top:20px; padding:40px; border:1px solid #000000ff; width:fit-content; background:linear-gradient(to right, #EA5455, #F07B3F, #FFD460 100%);">
-<p style="font-size:2rem; line-height:3rem; text-align:center;">Paling Murah: <br>Rp{{ number_format($paling_murah)}}</p>
-</div>
+<div style="display:flex; gap:1rem; margin-top:1.5rem; flex-wrap:wrap;">
+  <div style="flex:1 1 200px; padding:2rem; border-radius:1rem; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,.08);">
+    <p style="margin:0; font-size:2rem; font-weight:600; color:#1f2937;">Jumlah Buku</p>
+    <p style="margin:.25rem 0 0; font-size:2.5rem; font-weight:700; color="#3b82f6;">{{ $jumlah_buku }}</p>
+  </div>
+  <div style="flex:1 1 200px; padding:2rem; border-radius:1rem; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,.08);">
+    <p style="margin:0; font-size:2rem; font-weight:600; color:#1f2937;">Total Harga</p>
+    <p style="margin:.25rem 0 0; font-size:2.5rem; font-weight:700; color:#10b981;">Rp{{ number_format($total_harga) }}</p>
+  </div>
+  <div style="flex:1 1 200px; padding:2rem; border-radius:1rem; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,.08);">
+    <p style="margin:0; font-size:2rem; font-weight:600; color:#1f2937;">Paling Mahal</p>
+    <p style="margin:.25rem 0 0; font-size:2.5rem; font-weight:700; color="#ef4444;">Rp{{ number_format($paling_mahal) }}</p>
+  </div>
+  <div style="flex:1 1 200px; padding:2rem; border-radius:1rem; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,.08);">
+    <p style="margin:0; font-size:2rem; font-weight:600; color:#1f2937;">Paling Murah</p>
+    <p style="margin:.25rem 0 0; font-size:2.5rem; font-weight:700; color:#06b6d4;">Rp{{ number_format($paling_murah) }}</p>
+  </div>
 </div>
 
 @endsection('')

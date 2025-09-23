@@ -6,11 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Buku;
 
-class BukuSeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     */
+class BukuSeeder extends Seeder{
     public function run(): void
     {
         for ($i=1; $i <= 20; $i++) { 
