@@ -24,10 +24,19 @@ Route::get('/about', [PostController::class, 'name']);
 Route::get('/image', [Oddy::class, 'index']);
 
 
-Route::get('/buku/', [BukuController::class, 'index']);
+// Route::resource('buku', BukuController::class);
 Route::get('/terbaru', [BukuController::class, 'terbaru']);
 
-Route::get('/', [PostController::class, 'index']);
+Route::get('/buku', [BukuController::class, 'index']);
+
+Route::get('/buku/create', [BukuController::class, 'create']) -> name('buku.create');
+Route::post('/buku', [BukuController::class, 'store']) -> name('buku.store');
+Route::delete('/buku/{id}', [BukuController::class, 'destroy']) -> name('buku.destroy');
+
+
+
+Route::get('/buku/{id}/edit', [BukuController::class, 'edit']) -> name('buku.edit');
+
 
 
 
