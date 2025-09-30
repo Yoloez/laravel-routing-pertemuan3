@@ -6,5 +6,8 @@
 <div >
     <h1 style="color:brown">Selamat datang di Website hanan</h1>
     <h3>Laravel v.10</h3>
+    <h4>MAU ACHIEVEMENT YO DYYY (KACANG POLONG) ntar kamu juga dapet, makasih </h4>
 </div>
+
+
 @endsection('')
