@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <h2>Edit Buku</h2>
-    
+
     <a href="{{ url('/buku') }}" class="btn btn-secondary mb-3">Kembali</a>
-    
+
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -15,8 +15,8 @@
             </ul>
         </div>
     @endif
-    
-    <form action="{{ url('/buku/' . $buku->id) }}" method="POST">
+
+    <form action="{{ route('buku.update', $buku->id) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="mb-3">
